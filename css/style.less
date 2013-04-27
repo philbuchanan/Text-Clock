@@ -1,0 +1,85 @@
+/* COLOR MIXIN
+   ---------------------------------- */
+
+.colors (@bg, @off, @on, @glow: 7px) {
+	background-color: @bg;
+	color: @off;
+	.on {
+		color: @on;
+		-webkit-text-shadow: 0 0 @glow @on;
+		   -moz-text-shadow: 0 0 @glow @on;
+		        text-shadow: 0 0 @glow @on;
+	}
+}
+
+
+/* RESET
+   ---------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+blockquote, q {quotes: none;}
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #000; margin: 1em 0; padding: 0;}
+input, select {vertical-align: middle;}
+button, input, select, textarea {margin: 0;}
+
+
+/* CLOCK
+   ---------------------------------- */
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd25UltraLight';
+    src: url('../fonts/helveticaneueltstd-ultlt.eot');
+    src: url('../fonts/helveticaneueltstd-ultlt.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-ultlt.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-ultlt.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-ultlt.svg#HelveticaNeueLTStd25UltraLight') format('svg');
+}
+body {
+	font-family: "HelveticaNeueLTStd25UltraLight", Helvetica, Arial, sans-serif;
+	font-size: 48px;
+	line-height: 78px;
+	.colors(#19161a, #000, #d7d7d7);
+	-webkit-transition: all .2s ease-out;
+	   -moz-transition: all .2s ease-out;
+	        transition: all .2s ease-out;
+	&.white {.colors (#fff, #eee, #888, 10px);}
+	&.green {.colors (#2e9972, #288563, #eee, 14px);}
+	&.red   {.colors (#b2363f, #992e35, #eee, 14px);}
+}
+.center {
+	margin: 0 auto;
+	width: 800px;
+	.content {
+		position: absolute;
+		top: 50%;
+		width: 800px;
+		height: 760px;
+		margin-top: -380px;
+	}
+}
+.span {
+	-webkit-transition: color .4s ease-out;
+	   -moz-transition: color .4s ease-out;
+	        transition: color .4s ease-out;
+}
+.grid {
+	float: left;
+	margin-left: 30px;
+	width: 40px;
+	text-align: center;
+}
